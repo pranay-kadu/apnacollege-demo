@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.util.*;
+public class Task1 {
+   public void fun(int count){
+if (count ==0){
+    System.out.println("Better luck next time");
+}
+if(count >=1 ){
+    System.out.println("well done!!");
+}
+}
+   public static void main(String[] args) {
+        System.out.println("");
+        System.out.println("      WELCOME TO THE NUMBER GAME!!!");
+        System.out.println("      Enter a number between 1-100 only.");
+        System.out.println("      Five chances will be given.");
+        System.out.println("");
+        Random a=new Random();
+        int n = a.nextInt(100)+1;
+         int count =0;
+        for(int i =1;i<=5;i++){
+            
+        Scanner obj = new Scanner(System.in);
+        System.out.print("Guess the number between 1-100: ");
+        int num = obj.nextInt();
+        
+        
+         if(num - n <= 10 && num-n > 0 ){
+            System.out.println("you are very close to number . ");
+         }else if(n- num <= 10 && n-num > 0 ){
+          System.out.println("you are very close to the number.");
+         }else if(num-n>10){
+          System.out.println("you are far from number");
+         }
+          else if(n-num>10){
+          System.out.println("you are far from number");
+         }
+          else if (num -n == 0){
+            System.out.println("WOOHOO___your guess is correct !!!");
+            count ++;
+        }
+}     
+  Task1 obj= new Task1();
+
+       obj.fun(count);
+       System.out.println("The correct answer is :" + n);
+    }
+}
